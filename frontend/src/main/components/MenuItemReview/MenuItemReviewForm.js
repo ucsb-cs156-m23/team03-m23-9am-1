@@ -18,13 +18,13 @@ function MenuItemReviewForm({ initialContents, submitAction, buttonLabel = "Crea
     const navigate = useNavigate();
 
     // Stryker disable next-line Regex
-    const int_regex = /\d+/;
+    const int_rgx = /\d+/;
     // Stryker disable next-line Regex
-    const email_regex = /\S+@\S+\.\S+/;
+    const email_rgx = /\S+@\S+\.\S+/;
     // Stryker disable next-line Regex
-    const stars_regex = /[1|2|3|4|5]/;
+    const stars_rgx= /[1|2|3|4|5]/;
     // Stryker disable next-line Regex
-    const isodate_regex = /(\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d\.\d+)|(\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d)|(\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d)/i;
+    const isodate_rgx = /(\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d\.\d+)|(\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d)|(\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d)/i;
 
 
     const testIdPrefix = "MenuItemReviewForm";
@@ -59,7 +59,7 @@ function MenuItemReviewForm({ initialContents, submitAction, buttonLabel = "Crea
                     {...register("itemId", {
                         required: "Item Id is required.",
                         pattern: {
-                            value: int_regex,
+                            value: int_rgx,
                             message: "Item Id must be a number"
                         },
                     })}
@@ -79,7 +79,7 @@ function MenuItemReviewForm({ initialContents, submitAction, buttonLabel = "Crea
                     {...register("reviewerEmail", {
                         required: "Reviewer Email is required.",
                         pattern: {
-                            value: email_regex,
+                            value: email_rgx,
                             message: "Reviewer Email must be a valid email address"
                         },
                     })}
@@ -99,7 +99,7 @@ function MenuItemReviewForm({ initialContents, submitAction, buttonLabel = "Crea
                     {...register("stars", {
                         required: "Stars are required.",
                         pattern: {
-                            value: stars_regex,
+                            value: stars_rgx,
                             message: "Stars must be a number between 1 and 5"
                         },
                     })}
@@ -119,7 +119,7 @@ function MenuItemReviewForm({ initialContents, submitAction, buttonLabel = "Crea
                     {...register("dateReviewed", {
                         required: "Date Reviewed is required.",
                         pattern: {
-                            value: isodate_regex,
+                            value: isodate_rgx,
                             message: "Date Reviewed must be a valid date"
                         },
                     })}
