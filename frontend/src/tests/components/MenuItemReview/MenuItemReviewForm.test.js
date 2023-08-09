@@ -178,9 +178,9 @@ describe("MenuItemReviewForm tests", () => {
        
        
         await screen.findByText(/Item Id must be a number/);
-        expect(screen.queryByText(/Reviewer Email must be a valid email address/)).toBeInTheDocument();
-        expect(screen.queryByText(/Stars must be a number between 1 and 5/)).toBeInTheDocument();
-        expect(screen.queryByText(/Date Reviewed must be a valid date/)).toBeInTheDocument();
+        expect(screen.getByText(/Reviewer Email must be a valid email address/)).toBeInTheDocument();
+        expect(screen.getByText(/Stars must be a number between 1 and 5/)).toBeInTheDocument();
+        expect(screen.getByText(/Date Reviewed must be a valid date/)).toBeInTheDocument();
 
     });
 
