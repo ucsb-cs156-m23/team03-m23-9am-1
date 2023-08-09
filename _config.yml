@@ -23,4 +23,4 @@ repo_name: "TBD"
 repo: ucsb-cs156-m23/team03-m23-9am-1
 owner: ucsb-cs156-m23
 repo_name: team03-m23-9am-1
-pull_requests: [{"author":{"id":"U_kgDOBnFUbw","is_bot":false,"login":"alecmorrison","name":""},"headRefName":"Alec-MenuItem-Table","number":65,"title":"added Dining Commons Menu Item Table/tests and the story file","url":"https://github.com/ucsb-cs156-m23/team03-m23-9am-1/pull/65"},{"author":{"id":"U_kgDOBdDJ8w","is_bot":false,"login":"pabucsb","name":""},"headRefName":"Pablo-Form-Component","number":63,"title":"form component for menuItemReview","url":"https://github.com/ucsb-cs156-m23/team03-m23-9am-1/pull/63"}]
+pull_requests: [{"author":{"id":"U_kgDOBnFUbw","is_bot":false,"login":"alecmorrison","name":""},"headRefName":"Alec-MenuItem-Table","number":65,"title":"added Dining Commons Menu Item Table/tests and the story file","url":"https://github.com/ucsb-cs156-m23/team03-m23-9am-1/pull/65"}]
