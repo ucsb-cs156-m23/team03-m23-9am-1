@@ -24,9 +24,9 @@ import UCSBDiningCommonsMenuItemCreatePage from "main/pages/UCSBDiningCommonsMen
 import UCSBDiningCommonsMenuItemEditPage from "main/pages/UCSBDiningCommonsMenuItem/UCSBDiningCommonsMenuItemEditPage";
 
 
-import MenuItemReviewIndexPage from "main/pages/Restaurants/MenuItemReviewIndexPage";
-import MenuItemReviewCreatePage from "main/pages/Restaurants/MenuItemReviewCreatePage";
-import MenuItemReviewEditPage from "main/pages/Restaurants/MenuItemReviewEditPage";
+import MenuItemReviewIndexPage from "main/pages/MenuItemReview/MenuItemReviewIndexPage";
+import MenuItemReviewCreatePage from "main/pages/MenuItemReview/MenuItemReviewCreatePage";
+import MenuItemReviewEditPage from "main/pages/MenuItemReview/MenuItemReviewEditPage";
 
 
 
