@@ -23,9 +23,12 @@ import UCSBDiningCommonsMenuItemIndexPage from "main/pages/UCSBDiningCommonsMenu
 import UCSBDiningCommonsMenuItemCreatePage from "main/pages/UCSBDiningCommonsMenuItem/UCSBDiningCommonsMenuItemCreatePage";
 import UCSBDiningCommonsMenuItemEditPage from "main/pages/UCSBDiningCommonsMenuItem/UCSBDiningCommonsMenuItemEditPage";
 
+
 import MenuItemReviewIndexPage from "main/pages/Restaurants/MenuItemReviewIndexPage";
 import MenuItemReviewCreatePage from "main/pages/Restaurants/MenuItemReviewCreatePage";
 import MenuItemReviewEditPage from "main/pages/Restaurants/MenuItemReviewEditPage";
+
+
 
 
 import { hasRole, useCurrentUser } from "main/utils/currentUser";
@@ -92,6 +95,7 @@ function App() {
         {
           hasRole(currentUser, "ROLE_USER") && (
             <>
+
               <Route exact path="/menuitemreview" element={<MenuItemReviewIndexPage />} />
             </>
           )
@@ -107,6 +111,8 @@ function App() {
         {
           hasRole(currentUser, "ROLE_USER") && (
             <>
+
+
               <Route exact path="/ucsbdiningcommonsmenuitem" element={<UCSBDiningCommonsMenuItemIndexPage />} />
             </>
           )
