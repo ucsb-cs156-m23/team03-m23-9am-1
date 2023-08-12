@@ -201,7 +201,7 @@ public class UCSBDiningCommonsMenuItemControllerTests extends ControllerTestCase
                 // arrange
 
                 UCSBDiningCommonsMenuItem menuItem = UCSBDiningCommonsMenuItem.builder()
-                                .id(1L)
+                                //.id(1L)
                                 .name("Baked Pesto Pasta with Chicken")
                                 .diningCommonsCode("ortega")
                                 .station("Entree Specials")
