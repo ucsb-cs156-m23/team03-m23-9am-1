@@ -23,4 +23,4 @@ repo_name: "TBD"
 repo: ucsb-cs156-m23/team03-m23-9am-1
 owner: ucsb-cs156-m23
 repo_name: team03-m23-9am-1
-pull_requests: [{"author":{"id":"U_kgDOBdDJ8w","is_bot":false,"login":"pabucsb","name":""},"headRefName":"Pablo-Placeholders","number":70,"title":"added placeholders","url":"https://github.com/ucsb-cs156-m23/team03-m23-9am-1/pull/70"}]
+pull_requests: [{"author":{"id":"U_kgDOBdDJ8w","is_bot":false,"login":"pabucsb","name":""},"headRefName":"Pablo-Placeholders","number":70,"title":"added placeholders","url":"https://github.com/ucsb-cs156-m23/team03-m23-9am-1/pull/70"},{"author":{"id":"U_kgDOBnFUbw","is_bot":false,"login":"alecmorrison","name":""},"headRefName":"Alec-MenuItem-Create","number":69,"title":"adding finished Menu Item create page, test, and .stories file","url":"https://github.com/ucsb-cs156-m23/team03-m23-9am-1/pull/69"}]
