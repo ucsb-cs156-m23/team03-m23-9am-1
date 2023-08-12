@@ -59,7 +59,7 @@ import javax.validation.Valid;
     @PreAuthorize(&quot;hasRole('ROLE_ADMIN')&quot;)
     @PostMapping(&quot;/post&quot;)
     public UCSBDiningCommonsMenuItem postCommons(
-        @Parameter(name=&quot;id&quot;) @RequestParam long id,
+        //@Parameter(name=&quot;id&quot;) @RequestParam long id,
         @Parameter(name=&quot;diningCommonsCode&quot;) @RequestParam String diningCommonsCode,
         @Parameter(name=&quot;name&quot;) @RequestParam String name,
         @Parameter(name=&quot;station&quot;) @RequestParam String station
@@ -67,7 +67,7 @@ import javax.validation.Valid;
         {
 
 <span class="fc" id="L69">        UCSBDiningCommonsMenuItem menuItem = new UCSBDiningCommonsMenuItem();</span>
-<span class="fc" id="L70">        menuItem.setId(id);</span>
+        //menuItem.setId(id);
 <span class="fc" id="L71">        menuItem.setName(name);</span>
 <span class="fc" id="L72">        menuItem.setDiningCommonsCode(diningCommonsCode);</span>
 <span class="fc" id="L73">        menuItem.setStation(station);</span>
