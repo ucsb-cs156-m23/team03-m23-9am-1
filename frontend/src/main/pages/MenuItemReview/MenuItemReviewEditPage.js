@@ -7,17 +7,17 @@ import { toast } from "react-toastify";
 //import MenuItemReviewCreatePageStories from "stories/pages/MenuItemReview/MenuItemReviewCreatePage.stories";
 
 export default function MenuItemReviewEditPage({storybook=false}) {
-    let { id } = useParams();
+    let { itemId } = useParams();
 
     const { data: reviews, _error, _status } =
         useBackend(
             // Stryker disable next-line all : don't test internal caching of React Query
-            [`/api/menuitemreview?itemId=${id}`],
+            [`/api/menuitemreview?itemId=${itemId}`],
             {  // Stryker disable next-line all : GET is the default, so mutating this to "" doesn't introduce a bug
                 method: "GET",
                 url: `/api/menuitemreview`,
                 params: {
-                    id
+                    itemId
                 }
             }
         );
