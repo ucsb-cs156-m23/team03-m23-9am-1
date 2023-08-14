@@ -180,7 +180,7 @@ public class MenuItemReviewControllerTests extends ControllerTestCase {
                 //LocalDateTime ldt1 = LocalDateTime.parse("2022-01-03T00:00:00");
 
                 MenuItemReview menuItemReview1 = MenuItemReview.builder()
-                                .itemId(2L)
+                                //.itemId(2L)
                                 .reviewerEmail("pds@ucsb.edu")
                                 .stars(5)
                                 .dateReviewed(LocalDateTime.of(2021, 5, 1, 12, 0, 0))
@@ -191,7 +191,7 @@ public class MenuItemReviewControllerTests extends ControllerTestCase {
 
                 // act
                 MvcResult response = mockMvc.perform(
-                                post("/api/menuitemreview/post?itemId=2&reviewerEmail=pds@ucsb.edu&stars=5&dateReviewed=2021-05-01T12:00:00&comments=solid food")
+                                post("/api/menuitemreview/post?reviewerEmail=pds@ucsb.edu&stars=5&dateReviewed=2021-05-01T12:00:00&comments=solid food")
                                                 .with(csrf()))
                                 .andExpect(status().isOk()).andReturn();
 
@@ -261,7 +261,7 @@ public class MenuItemReviewControllerTests extends ControllerTestCase {
                 //LocalDateTime ldt2 = LocalDateTime.parse("2023-01-03T00:00:00");
 
                 MenuItemReview menuItemReviewOrig = MenuItemReview.builder()
-                                .itemId(123L)
+                                //.itemId(123L)
                                 .reviewerEmail("adhit@ucsh.edu")
                                 .stars(5)
                                 .dateReviewed(LocalDateTime.of(2021, 6, 1, 12, 0, 0))
@@ -269,7 +269,7 @@ public class MenuItemReviewControllerTests extends ControllerTestCase {
                                 .build();
 
                 MenuItemReview menuItemReviewEdited = MenuItemReview.builder()
-                                .itemId(124L)
+                                //.itemId(124L)
                                 .reviewerEmail("pds@ucsh.edu")
                                 .stars(2)
                                 .dateReviewed(LocalDateTime.of(2021, 6, 2, 12, 0, 0))
