@@ -59,7 +59,7 @@ public class MenuItemReviewControllerTests extends ControllerTestCase {
 
         @Test
         public void logged_out_users_cannot_get_by_id() throws Exception {
-                mockMvc.perform(get("/api/menuitemreview?id=7"))
+                mockMvc.perform(get("/api/menuitemreview?itemId=7"))
                                 .andExpect(status().is(403)); // logged out users can't get by id
         }
 
@@ -99,7 +99,7 @@ public class MenuItemReviewControllerTests extends ControllerTestCase {
                 when(menuItemReviewRepository.findById(eq(7L))).thenReturn(Optional.of(menuItemReview));
 
                 // act
-                MvcResult response = mockMvc.perform(get("/api/menuitemreview?id=7"))
+                MvcResult response = mockMvc.perform(get("/api/menuitemreview?itemId=7"))
                                 .andExpect(status().isOk()).andReturn();
 
                 // assert
@@ -119,7 +119,7 @@ public class MenuItemReviewControllerTests extends ControllerTestCase {
                 when(menuItemReviewRepository.findById(eq(7L))).thenReturn(Optional.empty());
 
                 // act
-                MvcResult response = mockMvc.perform(get("/api/menuitemreview?id=7"))
+                MvcResult response = mockMvc.perform(get("/api/menuitemreview?itemId=7"))
                                 .andExpect(status().isNotFound()).andReturn();
 
                 // assert
@@ -221,7 +221,7 @@ public class MenuItemReviewControllerTests extends ControllerTestCase {
 
                 // act
                 MvcResult response = mockMvc.perform(
-                                delete("/api/menuitemreview?id=15")
+                                delete("/api/menuitemreview?itemId=15")
                                                 .with(csrf()))
                                 .andExpect(status().isOk()).andReturn();
 
@@ -242,7 +242,7 @@ public class MenuItemReviewControllerTests extends ControllerTestCase {
 
                 // act
                 MvcResult response = mockMvc.perform(
-                                delete("/api/menuitemreview?id=15")
+                                delete("/api/menuitemreview?itemId=15")
                                                 .with(csrf()))
                                 .andExpect(status().isNotFound()).andReturn();
 
@@ -282,7 +282,7 @@ public class MenuItemReviewControllerTests extends ControllerTestCase {
 
                 // act
                 MvcResult response = mockMvc.perform(
-                                put("/api/menuitemreview?id=67")
+                                put("/api/menuitemreview?itemId=67")
                                                 .contentType(MediaType.APPLICATION_JSON)
                                                 .characterEncoding("utf-8")
                                                 .content(requestBody)
@@ -317,7 +317,7 @@ public class MenuItemReviewControllerTests extends ControllerTestCase {
 
                 // act
                 MvcResult response = mockMvc.perform(
-                                put("/api/menuitemreview?id=67")
+                                put("/api/menuitemreview?itemId=67")
                                                 .contentType(MediaType.APPLICATION_JSON)
                                                 .characterEncoding("utf-8")
                                                 .content(requestBody)
