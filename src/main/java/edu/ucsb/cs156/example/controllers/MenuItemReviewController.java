@@ -69,7 +69,7 @@ public class MenuItemReviewController extends ApiController {
         {
 
         MenuItemReview review = new MenuItemReview();
-        review.setItemId(itemId);
+        //review.setItemId(itemId);
         review.setReviewerEmail(reviewerEmail);
         review.setStars(stars);
         review.setDateReviewed(dateReviewed);
@@ -103,7 +103,7 @@ public class MenuItemReviewController extends ApiController {
                 .orElseThrow(() -> new EntityNotFoundException(MenuItemReview.class, id));
 
 
-        review.setItemId(incoming.getItemId());  
+        //review.setItemId(incoming.getItemId());  
         review.setReviewerEmail(incoming.getReviewerEmail());
         review.setStars(incoming.getStars());
         review.setDateReviewed(incoming.getDateReviewed());
