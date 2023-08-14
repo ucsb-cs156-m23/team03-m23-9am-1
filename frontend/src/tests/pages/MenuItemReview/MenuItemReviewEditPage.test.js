@@ -27,7 +27,7 @@ jest.mock('react-router-dom', () => {
         ...originalModule,
         useParams: () => ({
             //might need to be itemId?
-            id: 17
+            itemId: 17
         }),
         Navigate: (x) => { mockNavigate(x); return null; }
     };
@@ -45,7 +45,7 @@ describe("MenuItemReviewEditPage tests", () => {
             axiosMock.onGet("/api/currentUser").reply(200, apiCurrentUserFixtures.userOnly);
             axiosMock.onGet("/api/systemInfo").reply(200, systemInfoFixtures.showingNeither);
             //maybe itemId
-            axiosMock.onGet("/api/menuitemreview", { params: { id: 17 } }).timeout();
+            axiosMock.onGet("/api/menuitemreview", { params: { itemId: 17 } }).timeout();
         });
 
         const queryClient = new QueryClient();
@@ -76,7 +76,7 @@ describe("MenuItemReviewEditPage tests", () => {
             axiosMock.resetHistory();
             axiosMock.onGet("/api/currentUser").reply(200, apiCurrentUserFixtures.userOnly);
             axiosMock.onGet("/api/systemInfo").reply(200, systemInfoFixtures.showingNeither);
-            axiosMock.onGet("/api/menuitemreview", { params: { id: 17 } }).reply(200, {
+            axiosMock.onGet("/api/menuitemreview", { params: { itemId: 17 } }).reply(200, {
                 //id: 17,
                 itemId: 17,//not sure if this is int or string
                 reviewerEmail: "test@ucsb.edu",
@@ -108,7 +108,7 @@ describe("MenuItemReviewEditPage tests", () => {
                 </QueryClientProvider>
             );
 
-            await screen.findByTestId("MenuItemReviewForm-item-id");
+            await screen.findByTestId("MenuItemReviewForm-reviewer-email");
 
            // const idField = screen.getByTestId("MenuItemReviewForm-item-id");
             const emailField = screen.getByTestId("MenuItemReviewForm-reviewer-email");
