@@ -18,7 +18,7 @@ function MenuItemReviewForm({ initialContents, submitAction, buttonLabel = "Crea
     const navigate = useNavigate();
 
     // Stryker disable next-line Regex
-    const int_rgx = /\d+/;
+    //const int_rgx = /\d+/;
     // Stryker disable next-line Regex
     const email_rgx = /\S+@\S+\.\S+/;
     // Stryker disable next-line Regex
@@ -36,12 +36,12 @@ function MenuItemReviewForm({ initialContents, submitAction, buttonLabel = "Crea
 
             {initialContents && (
                 <Form.Group className="mb-3" >
-                    <Form.Label htmlFor="id">Id</Form.Label>
+                    <Form.Label htmlFor="item-id">Item Id</Form.Label>
                     <Form.Control
-                        data-testid={testIdPrefix + "-id"}
-                        id="id"
+                        data-testid={testIdPrefix + "-item-id"}
+                        id="item-id"
                         type="text"
-                        {...register("id")}
+                        {...register("itemId")}
                         value={initialContents.id}
                         disabled
                     />
@@ -49,7 +49,7 @@ function MenuItemReviewForm({ initialContents, submitAction, buttonLabel = "Crea
             )}
 
             
-            <Form.Group className="mb-3" >
+            {/* <Form.Group className="mb-3" >
                 <Form.Label htmlFor="item-id">Item Id</Form.Label>
                 <Form.Control
                     data-testid={testIdPrefix + "-item-id"}
@@ -67,7 +67,7 @@ function MenuItemReviewForm({ initialContents, submitAction, buttonLabel = "Crea
                 <Form.Control.Feedback type="invalid">
                     {errors.itemId?.message}
                 </Form.Control.Feedback>
-            </Form.Group>
+            </Form.Group> */}
 
             <Form.Group className="mb-3" >
                 <Form.Label htmlFor="reviewer-email">Reviewer Email</Form.Label>

@@ -74,11 +74,11 @@ describe("MenuItemReviewCreatePage tests", () => {
         )
 
         await waitFor(() => {
-            expect(screen.getByLabelText("Item Id")).toBeInTheDocument();
+            expect(screen.getByLabelText("Reviewer Email")).toBeInTheDocument();
         });
 
-        const idInput = screen.getByLabelText("Item Id");
-        expect(idInput).toBeInTheDocument();
+        //const idInput = screen.getByLabelText("Item Id");
+        //expect(idInput).toBeInTheDocument();
 
         const emailInput = screen.getByLabelText("Reviewer Email");
         expect(emailInput).toBeInTheDocument();
@@ -97,7 +97,7 @@ describe("MenuItemReviewCreatePage tests", () => {
         const createButton = screen.getByText("Create");
         expect(createButton).toBeInTheDocument();
 
-        fireEvent.change(idInput, { target: { value: '3' } })
+        //fireEvent.change(idInput, { target: { value: '3' } })
         fireEvent.change(emailInput, { target: { value: 'pds@ucsb.edu' } })
         fireEvent.change(starsInput, { target: { value: '5' } })
         fireEvent.change(dateInput, { target: { value: '2022-01-02T12:00:00' } })
@@ -109,7 +109,6 @@ describe("MenuItemReviewCreatePage tests", () => {
         await waitFor(() => expect(axiosMock.history.post.length).toBe(1));
 
         expect(axiosMock.history.post[0].params).toEqual({
-            itemId: "3",
             reviewerEmail: "pds@ucsb.edu",
             stars: "5",
             dateReviewed: "2022-01-02T12:00:00",
