@@ -170,6 +170,27 @@ describe("AppNavbar tests", () => {
         expect(link.getAttribute("href")).toBe("/restaurants");
     });
 
+    test("renders the ucsborganization link correctly", async () => {
+
+        const currentUser = currentUserFixtures.userOnly;
+        const systemInfo = systemInfoFixtures.showingBoth;
+
+        const doLogin = jest.fn();
+
+        render(
+            <QueryClientProvider client={queryClient}>
+                <MemoryRouter>
+                    <AppNavbar currentUser={currentUser} systemInfo={systemInfo} doLogin={doLogin} />
+                </MemoryRouter>
+            </QueryClientProvider>
+        );
+
+        await screen.findByText("UCSB Organizations");
+        const link = screen.getByText("UCSB Organizations");
+        expect(link).toBeInTheDocument();
+        expect(link.getAttribute("href")).toBe("/ucsborganization");
+    });
+
     test("Restaurant and UCSBDates links do NOT show when not logged in", async () => {
         const currentUser = null;
         const systemInfo = systemInfoFixtures.showingBoth;
@@ -185,6 +206,7 @@ describe("AppNavbar tests", () => {
 
         expect(screen.queryByText("Restaurants")).not.toBeInTheDocument();
         expect(screen.queryByText("UCSBDates")).not.toBeInTheDocument();
+        expect(screen.queryByText("UCSB Organizations")).not.toBeInTheDocument();
     });
 
 });

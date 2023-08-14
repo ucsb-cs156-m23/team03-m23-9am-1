@@ -53,8 +53,11 @@ const reportAxiosError = (error) => {
 };
 
 const wrappedParams = async (params) => {
+    console.log(params);
     try {
-        return await (await axios(params)).data;
+        let data = await (await axios(params)).data;
+        console.log(data);
+        return data;
     } catch (rejectedValue) {
         reportAxiosError(rejectedValue);
         throw rejectedValue;
