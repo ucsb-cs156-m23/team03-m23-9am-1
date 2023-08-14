@@ -49,9 +49,9 @@ public class MenuItemReviewController extends ApiController {
     @PreAuthorize("hasRole('ROLE_USER')")
     @GetMapping("")
     public MenuItemReview getById(
-            @Parameter(name = "id") @RequestParam Long id) {
-        MenuItemReview menuReview = menuItemReviewRepository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException(MenuItemReview.class, id));
+            @Parameter(name = "itemId") @RequestParam Long itemId) {
+        MenuItemReview menuReview = menuItemReviewRepository.findById(itemId)
+                .orElseThrow(() -> new EntityNotFoundException(MenuItemReview.class, itemId));
 
         return menuReview;
     }
@@ -84,23 +84,23 @@ public class MenuItemReviewController extends ApiController {
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @DeleteMapping("")
     public Object deleteReview(
-            @Parameter(name="itemId") @RequestParam Long id) {
-        MenuItemReview review = menuItemReviewRepository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException(MenuItemReview.class, id));
+            @Parameter(name="itemId") @RequestParam Long itemId) {
+        MenuItemReview review = menuItemReviewRepository.findById(itemId)
+                .orElseThrow(() -> new EntityNotFoundException(MenuItemReview.class, itemId));
 
         menuItemReviewRepository.delete(review);
-        return genericMessage("MenuItemReivew with id %s deleted".formatted(id));
+        return genericMessage("MenuItemReivew with id %s deleted".formatted(itemId));
     }
 
     @Operation(summary = "Update a single review")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PutMapping("")
     public MenuItemReview updateReview(
-            @Parameter(name="itemId") @RequestParam Long id,
+            @Parameter(name="itemId") @RequestParam Long itemId,
             @RequestBody @Valid MenuItemReview incoming) {
 
-        MenuItemReview review = menuItemReviewRepository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException(MenuItemReview.class, id));
+        MenuItemReview review = menuItemReviewRepository.findById(itemId)
+                .orElseThrow(() -> new EntityNotFoundException(MenuItemReview.class, itemId));
 
 
         //review.setItemId(incoming.getItemId());  
