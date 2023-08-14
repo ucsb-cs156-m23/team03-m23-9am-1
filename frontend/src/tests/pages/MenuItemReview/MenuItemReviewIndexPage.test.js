@@ -75,7 +75,7 @@ describe("MenuItemReviewIndex tests", () => {
             </QueryClientProvider>
         );
 
-        await waitFor(() => { expect(screen.getByTestId(`${testId}-cell-row-0-col-id`)).toHaveTextContent("1"); });
+        await waitFor(() => { expect(screen.getByTestId(`${testId}-cell-row-0-col-itemId`)).toHaveTextContent("1"); });
         expect(screen.getByTestId(`${testId}-cell-row-1-col-itemId`)).toHaveTextContent("2");
         expect(screen.getByTestId(`${testId}-cell-row-2-col-itemId`)).toHaveTextContent("3");
 
@@ -91,7 +91,7 @@ describe("MenuItemReviewIndex tests", () => {
         const revEmail3 = screen.getByText("aasish@ucsb.edu");
         expect(revEmail3).toBeInTheDocument();
 
-        const starField = screen.getByText("3");
+        const starField = screen.getByTestId("MenuItemReviewTable-cell-row-0-col-stars");
         expect(starField).toBeInTheDocument();
 
         // for non-admin users, details button is visible, but the edit and delete buttons should not be visible
