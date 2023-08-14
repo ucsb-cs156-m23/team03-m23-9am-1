@@ -60,7 +60,7 @@ public class MenuItemReviewController extends ApiController {
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PostMapping("/post")
     public MenuItemReview postReview(
-        @Parameter(name="itemId") @RequestParam Long itemId,
+        //@Parameter(name="itemId") @RequestParam Long itemId,
         @Parameter(name="reviewerEmail") @RequestParam String reviewerEmail,
         @Parameter(name="stars") @RequestParam int stars,
         @Parameter(name="dateReviewed") @RequestParam LocalDateTime dateReviewed,
