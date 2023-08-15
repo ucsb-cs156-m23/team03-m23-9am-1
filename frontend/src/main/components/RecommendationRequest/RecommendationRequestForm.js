@@ -90,7 +90,7 @@ function RecommendationRequestForm({ initialContents, submitAction, buttonLabel 
                     type="text"
                     isInvalid={Boolean(errors.explanation)}
                     {...register("explanation", {
-                         required: 'Explanation is required.'
+                        required: 'Explanation is required.'
                     })}
                 />
                 <Form.Control.Feedback type="invalid">
