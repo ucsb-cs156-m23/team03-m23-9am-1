@@ -74,16 +74,19 @@ describe("UCSBOrganizationTable tests", () => {
     expect(screen.getByTestId(`${testId}-cell-row-0-col-orgCode`)).toHaveTextContent("WICS");
     expect(screen.getByTestId(`${testId}-cell-row-0-col-orgTranslationShort`)).toHaveTextContent("Women in CS");
     expect(screen.getByTestId(`${testId}-cell-row-0-col-orgTranslation`)).toHaveTextContent("Women in Computer Science at UCSB");
+    expect(screen.getByTestId(`${testId}-cell-row-0-col-inactive`)).toHaveTextContent("NO");
 
     expect(screen.getByTestId(`${testId}-cell-row-1-col-id`)).toHaveTextContent("3");
     expect(screen.getByTestId(`${testId}-cell-row-1-col-orgCode`)).toHaveTextContent("SKY");
     expect(screen.getByTestId(`${testId}-cell-row-1-col-orgTranslationShort`)).toHaveTextContent("Skydiving Club");
     expect(screen.getByTestId(`${testId}-cell-row-1-col-orgTranslation`)).toHaveTextContent("Skydiving Club at UCSB");
+    expect(screen.getByTestId(`${testId}-cell-row-1-col-inactive`)).toHaveTextContent("NO");
 
     expect(screen.getByTestId(`${testId}-cell-row-2-col-id`)).toHaveTextContent("4");
     expect(screen.getByTestId(`${testId}-cell-row-2-col-orgCode`)).toHaveTextContent("KRC");
     expect(screen.getByTestId(`${testId}-cell-row-2-col-orgTranslationShort`)).toHaveTextContent("KOREAN RADIO CL");
     expect(screen.getByTestId(`${testId}-cell-row-2-col-orgTranslation`)).toHaveTextContent("KOREAN RADIO CLUB");
+    expect(screen.getByTestId(`${testId}-cell-row-2-col-inactive`)).toHaveTextContent("YES");
 
     const editButton = screen.getByTestId(`${testId}-cell-row-0-col-Edit-button`);
     expect(editButton).toBeInTheDocument();
@@ -123,16 +126,19 @@ describe("UCSBOrganizationTable tests", () => {
     expect(screen.getByTestId(`${testId}-cell-row-0-col-orgCode`)).toHaveTextContent("WICS");
     expect(screen.getByTestId(`${testId}-cell-row-0-col-orgTranslationShort`)).toHaveTextContent("Women in CS");
     expect(screen.getByTestId(`${testId}-cell-row-0-col-orgTranslation`)).toHaveTextContent("Women in Computer Science at UCSB");
+    expect(screen.getByTestId(`${testId}-cell-row-0-col-inactive`)).toHaveTextContent("NO");
 
     expect(screen.getByTestId(`${testId}-cell-row-1-col-id`)).toHaveTextContent("3");
     expect(screen.getByTestId(`${testId}-cell-row-1-col-orgCode`)).toHaveTextContent("SKY");
     expect(screen.getByTestId(`${testId}-cell-row-1-col-orgTranslationShort`)).toHaveTextContent("Skydiving Club");
     expect(screen.getByTestId(`${testId}-cell-row-1-col-orgTranslation`)).toHaveTextContent("Skydiving Club at UCSB");
+    expect(screen.getByTestId(`${testId}-cell-row-1-col-inactive`)).toHaveTextContent("NO");
 
     expect(screen.getByTestId(`${testId}-cell-row-2-col-id`)).toHaveTextContent("4");
     expect(screen.getByTestId(`${testId}-cell-row-2-col-orgCode`)).toHaveTextContent("KRC");
     expect(screen.getByTestId(`${testId}-cell-row-2-col-orgTranslationShort`)).toHaveTextContent("KOREAN RADIO CL");
     expect(screen.getByTestId(`${testId}-cell-row-2-col-orgTranslation`)).toHaveTextContent("KOREAN RADIO CLUB");
+    expect(screen.getByTestId(`${testId}-cell-row-2-col-inactive`)).toHaveTextContent("YES");
 
     expect(screen.queryByText("Delete")).not.toBeInTheDocument();
     expect(screen.queryByText("Edit")).not.toBeInTheDocument();
