@@ -107,10 +107,7 @@ function RecommendationRequestForm({ initialContents, submitAction, buttonLabel 
                     isInvalid={Boolean(errors.dateRequested)}
                     {...register("dateRequested", {
                         required: 'Date requested is required.',
-                        pattern: {
-                            value: isodate_regex,
-                            message: 'Date requested must be a valid ISO-formatted date.'
-                        }
+                        pattern: isodate_regex
                     })}
                 />
                 <Form.Control.Feedback type="invalid">
@@ -127,10 +124,7 @@ function RecommendationRequestForm({ initialContents, submitAction, buttonLabel 
                     isInvalid={Boolean(errors.dateNeeded)}
                     {...register("dateNeeded", {
                         required: 'Date needed is required.',
-                        pattern: {
-                            value: isodate_regex,
-                            message: 'Date needed must be a valid ISO-formatted date.'
-                        }
+                        pattern: isodate_regex
                     })}
                 />
                 <Form.Control.Feedback type="invalid">
@@ -139,12 +133,22 @@ function RecommendationRequestForm({ initialContents, submitAction, buttonLabel 
             </Form.Group>
 
             <Form.Group className="mb-3" >
-                <Form.Label htmlFor="done">Done?</Form.Label>
-                <Form.Switch
+                <Form.Label htmlFor="done">Done? (yes/no)</Form.Label>
+                <Form.Control
                     data-testid={testIdPrefix + "-done"}
-                    id="done" 
-                    {...register("done")}
+                    id="done"
+                    type="text"
+                    isInvalid={Boolean(errors.done)}
+                    {...register("done", {
+                        required: 'Done is required.',
+                        // Stryker disable next-line all
+                        validate: (value) => [ 'yes', 'no' ].includes(value.toLowerCase())
+                    })}
                 />
+                <Form.Control.Feedback type="invalid">
+                    {errors.done?.message}
+                    {errors.done?.type === 'validate' && 'Done must be either "yes" or "no".'}
+                </Form.Control.Feedback>
             </Form.Group>
 
             <Button

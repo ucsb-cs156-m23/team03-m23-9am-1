@@ -59,7 +59,7 @@ describe("RecommendationRequestForm tests", () => {
         fireEvent.change(explanationField, { target: { value: 'valid-input' } });
         fireEvent.change(dateRequestedField, { target: { value: '2022-01-03T00:00:00' } });
         fireEvent.change(dateNeededField, { target: { value: '2022-01-05T00:00:00' } });
-        fireEvent.change(doneField, { target: { value: true } });
+        fireEvent.change(doneField, { target: { value: 'no' } });
         fireEvent.click(submitButton);
 
         await screen.findByText(/Requester email must be a valid email address./);
@@ -85,12 +85,13 @@ describe("RecommendationRequestForm tests", () => {
 
         fireEvent.change(requesterEmailField, { target: { value: 'adhit5@ucsb.edu' } });
         fireEvent.change(professorEmailField, { target: { value: 'phtcon5@ucsb.edu' } });
-        fireEvent.change(doneField, { target: { value: false } });
+        fireEvent.change(doneField, { target: { value: 'yaaaas' } });
         fireEvent.click(submitButton);
 
         await screen.findByText(/Explanation is required./);
         expect(screen.getByText(/Date requested is required./)).toBeInTheDocument();
         expect(screen.getByText(/Date needed is required./)).toBeInTheDocument();
+        expect(screen.getByText(/Done must be either "yes" or "no"./)).toBeInTheDocument();
 
     });
 
@@ -107,6 +108,7 @@ describe("RecommendationRequestForm tests", () => {
         const explanationField = screen.getByTestId("RecommendationRequestForm-explanation");
         const dateRequestedField = screen.getByTestId("RecommendationRequestForm-dateRequested");
         const dateNeededField = screen.getByTestId("RecommendationRequestForm-dateNeeded");
+        const doneField = screen.getByTestId("RecommendationRequestForm-done");
         const submitButton = screen.getByTestId("RecommendationRequestForm-submit");
 
         fireEvent.change(requesterEmailField, { target: { value: 'invalidemail1' } });
@@ -118,6 +120,7 @@ describe("RecommendationRequestForm tests", () => {
         await screen.findByText(/Professor email must be a valid email address./);
         expect(screen.getByText(/Date requested is required./)).toBeInTheDocument();
         expect(screen.getByText(/Date needed is required./)).toBeInTheDocument();
+        expect(screen.getByText(/Done is required./)).toBeInTheDocument();
 
     });
 
@@ -138,6 +141,7 @@ describe("RecommendationRequestForm tests", () => {
         expect(screen.getByText(/Explanation is required./)).toBeInTheDocument();
         expect(screen.getByText(/Date requested is required./)).toBeInTheDocument();
         expect(screen.getByText(/Date needed is required./)).toBeInTheDocument();
+        expect(screen.getByText(/Done is required./)).toBeInTheDocument();
 
     });
 
@@ -166,7 +170,7 @@ describe("RecommendationRequestForm tests", () => {
         fireEvent.change(explanationField, { target: { value: 'Recommendations are cool 1' } });
         fireEvent.change(dateRequestedField, { target: { value: '2022-03-03T00:00:00' } });
         fireEvent.change(dateNeededField, { target: { value: '2022-03-05T00:00:00' } });
-        fireEvent.change(doneField, { target: { value: true } });
+        fireEvent.change(doneField, { target: { value: 'yes' } });
         fireEvent.click(submitButton);
 
         await waitFor(() => expect(mockSubmitAction).toHaveBeenCalled());
@@ -176,11 +180,11 @@ describe("RecommendationRequestForm tests", () => {
         expect(screen.queryByText(/Explanation is required./)).not.toBeInTheDocument();
         expect(screen.queryByText(/Date requested is required./)).not.toBeInTheDocument();
         expect(screen.queryByText(/Date needed is required./)).not.toBeInTheDocument();
+        expect(screen.queryByText(/Done is required./)).not.toBeInTheDocument();
 
         expect(screen.queryByText(/Requester email must be a valid email address./)).not.toBeInTheDocument();
         expect(screen.queryByText(/Professor email must be a valid email address./)).not.toBeInTheDocument();
-        expect(screen.queryByText(/Date requested must be a valid ISO-formatted date./)).not.toBeInTheDocument();
-        expect(screen.queryByText(/Date needed must be a valid ISO-formatted date./)).not.toBeInTheDocument();
+        expect(screen.queryByText(/Done must be either "yes" or "no"./)).not.toBeInTheDocument();
 
     });
 
