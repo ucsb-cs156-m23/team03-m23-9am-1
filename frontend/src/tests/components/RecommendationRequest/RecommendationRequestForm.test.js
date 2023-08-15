@@ -59,7 +59,7 @@ describe("RecommendationRequestForm tests", () => {
         fireEvent.change(explanationField, { target: { value: 'valid-input' } });
         fireEvent.change(dateRequestedField, { target: { value: '2022-01-03T00:00:00' } });
         fireEvent.change(dateNeededField, { target: { value: '2022-01-05T00:00:00' } });
-        fireEvent.change(doneField, { target: { value: 'no' } });
+        fireEvent.change(doneField, { target: { value: 'false' } });
         fireEvent.click(submitButton);
 
         await screen.findByText(/Requester email must be a valid email address./);
@@ -91,7 +91,7 @@ describe("RecommendationRequestForm tests", () => {
         await screen.findByText(/Explanation is required./);
         expect(screen.getByText(/Date requested is required./)).toBeInTheDocument();
         expect(screen.getByText(/Date needed is required./)).toBeInTheDocument();
-        expect(screen.getByText(/Done must be either "yes" or "no"./)).toBeInTheDocument();
+        expect(screen.getByText(/Done must be either "true" or "false"./)).toBeInTheDocument();
 
     });
 
@@ -170,7 +170,7 @@ describe("RecommendationRequestForm tests", () => {
         fireEvent.change(explanationField, { target: { value: 'Recommendations are cool 1' } });
         fireEvent.change(dateRequestedField, { target: { value: '2022-03-03T00:00:00' } });
         fireEvent.change(dateNeededField, { target: { value: '2022-03-05T00:00:00' } });
-        fireEvent.change(doneField, { target: { value: 'yes' } });
+        fireEvent.change(doneField, { target: { value: 'true' } });
         fireEvent.click(submitButton);
 
         await waitFor(() => expect(mockSubmitAction).toHaveBeenCalled());
@@ -184,7 +184,7 @@ describe("RecommendationRequestForm tests", () => {
 
         expect(screen.queryByText(/Requester email must be a valid email address./)).not.toBeInTheDocument();
         expect(screen.queryByText(/Professor email must be a valid email address./)).not.toBeInTheDocument();
-        expect(screen.queryByText(/Done must be either "yes" or "no"./)).not.toBeInTheDocument();
+        expect(screen.queryByText(/Done must be either "true" or "false"./)).not.toBeInTheDocument();
 
     });
 

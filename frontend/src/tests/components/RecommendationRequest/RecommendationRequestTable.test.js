@@ -23,7 +23,7 @@ describe("UserTable tests", () => {
     render(
       <QueryClientProvider client={queryClient}>
         <MemoryRouter>
-          <RecommendationRequestTable recommendationrequests={recommendationRequestFixtures.threeRRs} currentUser={currentUser} />
+          <RecommendationRequestTable recommendationRequests={recommendationRequestFixtures.threeRRs} currentUser={currentUser} />
         </MemoryRouter>
       </QueryClientProvider>
 
@@ -61,7 +61,7 @@ describe("UserTable tests", () => {
     render(
       <QueryClientProvider client={queryClient}>
         <MemoryRouter>
-          <RecommendationRequestTable recommendationrequests={recommendationRequestFixtures.threeRRs} currentUser={currentUser} />
+          <RecommendationRequestTable recommendationRequests={recommendationRequestFixtures.threeRRs} currentUser={currentUser} />
         </MemoryRouter>
       </QueryClientProvider>
 
@@ -101,7 +101,7 @@ describe("UserTable tests", () => {
     render(
       <QueryClientProvider client={queryClient}>
         <MemoryRouter>
-          <RecommendationRequestTable recommendationrequests={recommendationRequestFixtures.threeRRs} currentUser={currentUser} />
+          <RecommendationRequestTable recommendationRequests={recommendationRequestFixtures.threeRRs} currentUser={currentUser} />
         </MemoryRouter>
       </QueryClientProvider>
 

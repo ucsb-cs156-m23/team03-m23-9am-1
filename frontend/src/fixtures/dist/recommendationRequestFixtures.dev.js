@@ -1,0 +1,43 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.recommendationRequestFixtures = void 0;
+var recommendationRequestFixtures = {
+  oneRR: {
+    "id": 1,
+    "requesterEmail": "adhit10@ucsb.edu",
+    "professorEmail": "phtcon10@ucsb.edu",
+    "explanation": "Recommendations are cool 10",
+    "dateRequested": "2022-10-03T00:00:00",
+    "dateNeeded": "2022-10-05T00:00:00",
+    "done": "true"
+  },
+  threeRRs: [{
+    "id": 1,
+    "requesterEmail": "adhit1@ucsb.edu",
+    "professorEmail": "phtcon1@ucsb.edu",
+    "explanation": "Recommendations are cool 1",
+    "dateRequested": "2022-01-03T00:00:00",
+    "dateNeeded": "2022-01-05T00:00:00",
+    "done": "false"
+  }, {
+    "id": 2,
+    "requesterEmail": "adhit2@ucsb.edu",
+    "professorEmail": "phtcon2@ucsb.edu",
+    "explanation": "Recommendations are cool 2",
+    "dateRequested": "2022-02-03T00:00:00",
+    "dateNeeded": "2022-02-05T00:00:00",
+    "done": "true"
+  }, {
+    "id": 3,
+    "requesterEmail": "adhit3@ucsb.edu",
+    "professorEmail": "phtcon3@ucsb.edu",
+    "explanation": "Recommendations are cool 3",
+    "dateRequested": "2022-03-03T00:00:00",
+    "dateNeeded": "2022-03-05T00:00:00",
+    "done": "false"
+  }]
+};
+exports.recommendationRequestFixtures = recommendationRequestFixtures;

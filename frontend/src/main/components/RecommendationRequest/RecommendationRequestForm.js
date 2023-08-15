@@ -133,7 +133,7 @@ function RecommendationRequestForm({ initialContents, submitAction, buttonLabel 
             </Form.Group>
 
             <Form.Group className="mb-3" >
-                <Form.Label htmlFor="done">Done? (yes/no)</Form.Label>
+                <Form.Label htmlFor="done">Done? (true/false)</Form.Label>
                 <Form.Control
                     data-testid={testIdPrefix + "-done"}
                     id="done"
@@ -142,12 +142,12 @@ function RecommendationRequestForm({ initialContents, submitAction, buttonLabel 
                     {...register("done", {
                         required: 'Done is required.',
                         // Stryker disable next-line all
-                        validate: (value) => [ 'yes', 'no' ].includes(value.toLowerCase())
+                        validate: (value) => [ 'true', 'false' ].includes(value.toLowerCase())
                     })}
                 />
                 <Form.Control.Feedback type="invalid">
                     {errors.done?.message}
-                    {errors.done?.type === 'validate' && 'Done must be either "yes" or "no".'}
+                    {errors.done?.type === 'validate' && 'Done must be either "true" or "false".'}
                 </Form.Control.Feedback>
             </Form.Group>
 
